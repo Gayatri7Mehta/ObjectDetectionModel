@@ -3,17 +3,32 @@ from flask import Flask, render_template, flash, request, redirect
 import os
 from werkzeug.utils import secure_filename
 from detect import run
-from utils import ALLOWED_EXTENSIONS, allowed_file
+#from utils import ALLOWED_EXTENSIONS, allowed_file
 import uuid
 import yaml
 from loguru import logger
+import boto3
+import json
+
+s3_client =boto3.client("s3")
+
+with open('config.json') as f:
+    config =json.load(f)
+
+bucket_name = config['img_bucket']
 
 with open("data/coco128.yaml", "r") as stream:
     names = yaml.safe_load(stream)['names']
 
 logger.info(f'yolo5 is up, supported classes are:\n\n{names}')
 
+
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 logger.info(f'supported files are: {ALLOWED_EXTENSIONS}')
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
 app = Flask(__name__, static_url_path='')

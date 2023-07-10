@@ -6,7 +6,7 @@ from collections import Counter
 import ffmpeg
 
 
-YOLO_URL = 'http://localhost:8081'
+YOLO_URL = 'http://yolo5.gayatri22.svc.cluster.local:8081'
 
 
 class Bot:

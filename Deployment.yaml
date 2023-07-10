@@ -125,4 +125,4 @@ spec:
     spec:
       containers:
       - name: polybot
-        image: gayatri7mehta/telebot:0.0.1 # TODO change IMG_URL to your polybot image in dockerhub or ECR
+        image: gayatri7mehta/telebot:0.0.2 # TODO change IMG_URL to your polybot image in dockerhub or ECR

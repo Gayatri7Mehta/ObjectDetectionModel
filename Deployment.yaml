@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: gayatri7mehta/front:0.0.3 # TODO change IMG_URL to your frontend image in dockerhub or ECR
+        image: gayatri7mehta/front:0.0.4 # TODO change IMG_URL to your frontend image in dockerhub or ECR
         ports:
         - containerPort: 8082
 ---

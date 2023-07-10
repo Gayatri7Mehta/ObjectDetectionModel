@@ -93,7 +93,7 @@ spec:
     spec:
       containers:
       - name: yolo5
-        image: gayatri7mehta/yolo5:0.0.5 # TODO change IMG_URL to your yolo5 image in dockerhub or ECR
+        image: gayatri7mehta/yolo5:0.0.6 # TODO change IMG_URL to your yolo5 image in dockerhub or ECR
         ports:
         - containerPort: 8081
 ---
